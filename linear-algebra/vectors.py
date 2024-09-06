@@ -50,7 +50,8 @@ assert scalar_multiply(2, [1,2,3]) == [2, 4, 6]
 def vector_mean(vectors: List[Vector]) -> Vector:
     num_vectors = len(vectors)
 
-    return [val / num_vectors for val in vector_sum(vectors)]
+    # return [val / num_vectors for val in vector_sum(vectors)]
+    return scalar_multiply(1/num_vectors, vector_sum(vectors))
 
 assert vector_mean([[10, 15, 4], [33, 16, 28]]) == [21.5, 15.5, 16]
 
