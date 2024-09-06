@@ -1,3 +1,7 @@
 /matplotlib/bin
 /matplotlib/lib
 /matplotlib/share
+/linear-algebra/bin
+/linear-algebra/lib
+/linear-algebra/share
+/linear-algebra/venv
