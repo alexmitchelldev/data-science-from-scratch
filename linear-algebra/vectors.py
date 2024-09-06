@@ -31,12 +31,17 @@ def subtract(v: Vector, w: Vector) -> Vector:
 assert subtract([1,2,3], [4,5,6]) == [-3, -3, -3]
 
 def vector_sum(vectors: List[Vector]):
-    """Sums all vectors"""
-    assert all([len(vector) == len(vectors[0]) for vector in vectors]), "All vectors must be the same length!"
+    """Sums all corresponding elements"""
 
     num_vectors = len(vectors[0])
+    # Check all vectors are the same size
+    assert all([len(vector) == num_vectors for vector in vectors]), "All vectors must be the same length!"
+
+    # the i-th element of the result is the sum of every vector[i]
     return [sum(vector[i] for vector in vectors) for i in range(num_vectors)]
 
 assert vector_sum([[1,2,3], [1,2,3]]) == [2,4,6]
+
+
 
 print('all tests passed')
