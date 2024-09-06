@@ -42,6 +42,9 @@ def vector_sum(vectors: List[Vector]):
 
 assert vector_sum([[1,2,3], [1,2,3]]) == [2,4,6]
 
+def scalar_multiply(s: float, v: Vector) -> Vector:
+    return [el * s for el in v]
 
+assert scalar_multiply(2, [1,2,3]) == [2, 4, 6]
 
 print('all tests passed')
