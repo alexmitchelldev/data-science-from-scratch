@@ -63,4 +63,13 @@ def dot(v: Vector, w: Vector) -> float:
 
 assert dot([1,2,3], [1,2,3]) == 14
 
+def sum_of_squares(vectors: List[Vector]) -> float:
+    num_vectors = len(vectors[0])
+    assert all([len(vector) == num_vectors for vector in vectors]), "All vectors must be the same length!"
+
+    return sum([dot(vector, vector) for vector in vectors])
+
+assert sum_of_squares([[1,2,3]]) == 14
+assert sum_of_squares([[1,2,3], [1,2,3]]) == 28
+
 print('all tests passed')
