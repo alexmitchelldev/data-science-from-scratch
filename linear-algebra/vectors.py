@@ -1,4 +1,5 @@
 from typing import List
+import math
 
 Vector = List[float]
 
@@ -71,5 +72,13 @@ def sum_of_squares(vectors: List[Vector]) -> float:
 
 assert sum_of_squares([[1,2,3]]) == 14
 assert sum_of_squares([[1,2,3], [1,2,3]]) == 28
+
+# to calculate the magnitude of a vector of integers, calculate the sum of its squares and then and then square root that sum
+def magnitude(v: Vector) -> float:
+    """Returns the magnitude or length of v"""
+    return math.sqrt(sum_of_squares([v]))
+
+assert magnitude([3]) == 3
+assert magnitude([2, 3, 1, 1, 1]) == 4
 
 print('all tests passed')
