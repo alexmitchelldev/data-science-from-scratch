@@ -34,7 +34,9 @@ def vector_sum(vectors: List[Vector]):
     """Sums all vectors"""
     assert all([len(vector) == len(vectors[0]) for vector in vectors]), "All vectors must be the same length!"
 
-    return None
+    num_vectors = len(vectors[0])
+    return [sum(vector[i] for vector in vectors) for i in range(num_vectors)]
 
-vector_sum([height_weight_age, height_weight_age])
+assert vector_sum([[1,2,3], [1,2,3]]) == [2,4,6]
+
 print('all tests passed')
