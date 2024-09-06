@@ -55,4 +55,12 @@ def vector_mean(vectors: List[Vector]) -> Vector:
 
 assert vector_mean([[10, 15, 4], [33, 16, 28]]) == [21.5, 15.5, 16]
 
+# dot is the sum 2 vector's componentwise products
+def dot(v: Vector, w: Vector) -> float:
+    assert len(v) == len(w), "Vectors must be the same length!"
+
+    return sum([v_i * w_i for v_i, w_i in zip(v, w)])
+
+assert dot([1,2,3], [1,2,3]) == 14
+
 print('all tests passed')
