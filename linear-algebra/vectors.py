@@ -81,4 +81,11 @@ def magnitude(v: Vector) -> float:
 assert magnitude([3]) == 3
 assert magnitude([2, 3, 1, 1, 1]) == 4
 
+# to calculate the distance between 2 vectors, use the euclidean distance formula
+# this formula is an extension of pythagoreon theorem
+def distance(v: Vector, w: Vector) -> float:
+    return magnitude(subtract(v, w))
+    # return math.sqrt(sum_of_squares([subtract(v, w)]))
+
+print(distance([1,2,3], [4,5,6]))
 print('all tests passed')
