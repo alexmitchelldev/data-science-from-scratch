@@ -30,7 +30,7 @@ def subtract(v: Vector, w: Vector) -> Vector:
 
 assert subtract([1,2,3], [4,5,6]) == [-3, -3, -3]
 
-def vector_sum(vectors: List[Vector]):
+def vector_sum(vectors: List[Vector]) -> Vector:
     """Sums all corresponding elements"""
 
     num_vectors = len(vectors[0])
@@ -46,5 +46,12 @@ def scalar_multiply(s: float, v: Vector) -> Vector:
     return [el * s for el in v]
 
 assert scalar_multiply(2, [1,2,3]) == [2, 4, 6]
+
+def vector_mean(vectors: List[Vector]) -> Vector:
+    num_vectors = len(vectors)
+
+    return [val / num_vectors for val in vector_sum(vectors)]
+
+assert vector_mean([[10, 15, 4], [33, 16, 28]]) == [21.5, 15.5, 16]
 
 print('all tests passed')
